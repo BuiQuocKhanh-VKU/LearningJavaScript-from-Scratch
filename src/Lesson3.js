@@ -29,3 +29,8 @@ let name = "mazda 3"
 let owner = "Khanh Bui"
 console.log("name: ", name, "owner: "+ owner)
 console.log("%c Canh bao!", "color: red; font-weight:bold")
+
+
+const ten = "Khanh"
+const tuoi = "20"
+console.log(`my name is ${ten} and I'm ${tuoi}`)
