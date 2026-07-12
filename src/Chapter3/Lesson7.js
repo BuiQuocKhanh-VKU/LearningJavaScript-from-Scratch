@@ -24,8 +24,14 @@ console.log(score, "with", score.length);
 // score.forEach((gtr, chiso)=>{
 //     console.log(gtr, chiso);
 // })
-const scoreX2 = score.map((value, index) => {
-    return value * 2
+const scoreX2 = score.map((item,index)=>{
+    return item * 2
 })
-console.log(scoreX2)
+console.log("new score: ", scoreX2)
 
+
+//filter
+const scoreThan18 = score.filter((item,index)=>{
+    return item > 5
+})
+console.log("Score >...: ", scoreThan18)
