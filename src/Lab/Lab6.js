@@ -4,18 +4,11 @@ const eBtnSave = document.querySelector("#btnSave");
 const eName = document.querySelector("#name");
 const tbody = document.querySelector("#users");
 
-console.log(tbody);
-getRandomIntInclusive = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
 if (eBtnSave) {
     eBtnSave.addEventListener("click", () => {
         const myTodo = {
-            id: getRandomIntInclusive(1, 100),
-            name: eName.value,
+            id: Date.now(),
+            name: eName.value.trim(),
         };
         const currentTodoStr = localStorage.getItem("khanhKey");
         if (currentTodoStr) {
@@ -41,10 +34,36 @@ const generateTodoTable = () => {
         <tr>
                 <td>${item.id}</td>
                 <td>${item.name}</td>
-                <td><button>Delete</button></td>
+                <td><button 
+                data-id = ${item.id} 
+                class = "btn-delete" >
+                Delete</button></td>
         </tr>`;
             });
         }
     }
 };
 generateTodoTable();
+
+const eDelete = document.querySelectorAll(".btn-delete");
+if (eDelete) {
+    eDelete.forEach((btn, index) => {
+        console.log(btn);
+        btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-id");
+            handleDelete(id);
+        });
+    });
+}
+
+const handleDelete = (id) => {
+    const todoListStr = localStorage.getItem("khanhKey");
+    if (todoListStr) {
+        const todoList = JSON.parse(todoListStr);
+
+        const newTodo = todoList.filter((todo, index) => todo.id + "" !== id);
+
+        localStorage.setItem("khanhKey", JSON.stringify(newTodo));
+        location.reload();
+    }
+};
