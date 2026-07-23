@@ -1,0 +1,72 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>blog Web</title>
+        <style>
+            #blog {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #blog td,
+            #blog th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #blog tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #blog tr:hover {
+                background-color: #ddd;
+            }
+
+            #blog th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04aa6d;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Blog List</h1>
+<br>
+<div>
+<div>
+      <label>Title</label>
+      <input type="text" id = "title">
+</div><br>
+<div>
+      <label>Author</label>
+      <input type="text" id = "author">
+</div><br>
+<div>
+      <label>Content</label>
+      <input type="text" id = "content">
+</div><br>
+<div>
+      <button id = "saveBtn">Save</button>
+</div>
+</div>
+<br>
+       <table id="blog">
+        <thead> 
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>Action</th>
+        </thead>
+       
+        <tbody>
+
+        </tbody>
+        
+    </body>
+    <script src = "Lab7.js"></script>
+</html>
